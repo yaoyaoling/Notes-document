@@ -20,7 +20,7 @@ UML 模型大多以图表的方式表现出来，一份典型的建模图表通�
 
 UML 建模的核心是模型，模型是现实的简化、真实系统的抽象。UML 提供了系统的设计蓝图。当给软件系统建模时，需要采用通用的符号语言，这种描述模型所使用的语言被称为建模语言。在 UML 中，所有的描述由事物、关系和图这些构件组成。下图完整地描述了所有构件的关系。
 
-![image-20220424092120678](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424092120678.png)
+![image-20220424092120678](GOF 23种设计模式.assets\image-20220424092120678.png)
 
 下面对上图中的构件进行说明。
 
@@ -32,15 +32,17 @@ UML 建模的核心是模型，模型是现实的简化、真实系统的抽象�
 
   结构事物是模型中的静态部分，用以呈现概念或实体的表现元素，如下表所示。
 
+  
+
   | 事物                   | 解释                                                         | 图例                                                         |
   | ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-  | 类（Class）            | 具有相同属性、方法、关系和语义的对象集合                     | <img src="file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424092521298.png?lastModify=1650763300" alt="image-20220424092521298" style="zoom:67%;" /> |
-  | 接口（Interface）      | 指一个类或构件的一个服务的操作集合，它仅仅定义了一组操作的规范，并没有给出这组操作的具体实现 | <img src="file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424092634845.png?lastModify=1650763300" alt="image-20220424092634845" style="zoom:67%;" /> |
-  | 用例（User Case）      | 指对一组动作序列的描述，系统执行这些动作将产生一个对特定的参与者（Actor）有价值且可观察的结果 | <img src="file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424092733109.png?lastModify=1650763300" alt="image-20220424092733109" style="zoom: 67%;" /> |
-  | 协作（Collaboration）  | 定义元素之间的相互作用                                       | ![image-20220424092923161](file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424092923161.png?lastModify=1650763300) |
-  | 组件（Component）      | 描述物理系统的一部分                                         | <img src="file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424092902481.png?lastModify=1650763300" alt="image-20220424092902481" style="zoom:67%;" /> |
-  | 活动类（Active Class） | 指对象有一个或多个进程或线程。活动类和类很相象，只是它的对象代表的元素的行为和其他元素是同时存在的 | <img src="file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424092833509.png?lastModify=1650763300" alt="image-20220424092833509" style="zoom:67%;" /> |
-  | 节点（Node）           | 定义为运行时存在的物理元素                                   | <img src="file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424092811674.png?lastModify=1650763300" alt="image-20220424092811674" style="zoom:67%;" /> |
+  | 类（Class）            | 具有相同属性、方法、关系和语义的对象集合                     | <img src="GOF 23种设计模式.assets\image-20220424092521298.png?lastModify=1650763300" alt="image-20220424092634845" style="zoom:67%;" /> |
+  | 接口（Interface）      | 指一个类或构件的一个服务的操作集合，它仅仅定义了一组操作的规范，并没有给出这组操作的具体实现 | <img src="GOF 23种设计模式.assets\image-20220424092634845.png?lastModify=1650763300" alt="image-20220424092634845" style="zoom:67%;" /> |
+  | 用例（User Case）      | 指对一组动作序列的描述，系统执行这些动作将产生一个对特定的参与者（Actor）有价值且可观察的结果 | <img src="GOF 23种设计模式.assets\image-20220424092733109.png?lastModify=1650763300" alt="image-20220424092733109" style="zoom: 67%;" /> |
+  | 协作（Collaboration）  | 定义元素之间的相互作用                                       | ![image-20220424092923161](GOF 23种设计模式.assets\image-20220424092923161.png?lastModify=1650763300) |
+  | 组件（Component）      | 描述物理系统的一部分                                         | <img src="GOF 23种设计模式.assets\image-20220424092902481.png?lastModify=1650763300" alt="image-20220424092902481" style="zoom:67%;" /> |
+  | 活动类（Active Class） | 指对象有一个或多个进程或线程。活动类和类很相象，只是它的对象代表的元素的行为和其他元素是同时存在的 | <img src="GOF 23种设计模式.assets\image-20220424092833509.png?lastModify=1650763300" alt="image-20220424092833509" style="zoom:67%;" /> |
+  | 节点（Node）           | 定义为运行时存在的物理元素                                   | <img src="GOF 23种设计模式.assets\image-20220424092811674.png?lastModify=1650763300" alt="image-20220424092811674" style="zoom:67%;" /> |
 
 - **行为事物**
 
@@ -48,8 +50,8 @@ UML 建模的核心是模型，模型是现实的简化、真实系统的抽象�
 
   | 事物                    | 解释                       | 用例                                                         |
   | ----------------------- | -------------------------- | ------------------------------------------------------------ |
-  | 交互（Interaction）     | 包括一组元素之间的消息交换 | ![image-20220424093046923](file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424093046923.png?lastModify=1650763300) |
-  | 状态机（State Machine） | 由一系列对象的状态组成     | ![image-20220424093033477](file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424093033477.png?lastModify=1650763300) |
+  | 交互（Interaction）     | 包括一组元素之间的消息交换 | ![image-20220424093046923](GOF 23种设计模式.assets\image-20220424093046923.png?lastModify=1650763300) |
+  | 状态机（State Machine） | 由一系列对象的状态组成     | ![image-20220424093033477](GOF 23种设计模式.assets\image-20220424093033477.png?lastModify=1650763300) |
 
 - **分组事物**
 
@@ -57,7 +59,7 @@ UML 建模的核心是模型，模型是现实的简化、真实系统的抽象�
 
   | 事物          | 解释                | 用例                                                         |
   | ------------- | ------------------- | ------------------------------------------------------------ |
-  | 包（Package） | UML中唯一的组织机制 | ![image-20220424093006062](file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424093006062.png?lastModify=1650763300) |
+  | 包（Package） | UML中唯一的组织机制 | ![image-20220424093006062](GOF 23种设计模式.assets\image-20220424093006062.png?lastModify=1650763300) |
 
 - **注释事物**
 
@@ -65,7 +67,7 @@ UML 建模的核心是模型，模型是现实的简化、真实系统的抽象�
 
   | 事物         | 解释                  | 用例                                                         |
   | ------------ | --------------------- | ------------------------------------------------------------ |
-  | 注释（Note） | 用于解析说明 UML 元素 | ![image-20220424093114034](file://C:/Users/xzzha/AppData/Roaming/Typora/typora-user-images/image-20220424093114034.png?lastModify=1650763300) |
+  | 注释（Note） | 用于解析说明 UML 元素 | ![image-20220424093114034](GOF 23种设计模式.assets\image-20220424093114034.png?lastModify=1650763300) |
 
 > 关于 UML 中的关系，我们在《[UML类图及类图之间的关系](http://c.biancheng.net/view/8374.html)》一节讲解。
 
@@ -123,12 +125,14 @@ UML2.0 一共有 13 种图（UML1.5 定义了 9 种，UML2.0 增加了 4 种）�
 
   如下所示是学生类的 UML 表示。
 
-  ![image-20220424094425757](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424094425757.png)
+  
+
+  <img src="GOF 23种设计模式.assets\image-20220424094425757.png" alt="image-20220424094425757" style="zoom:80%;" />
 
   Student 类
 
   > 类图用 3 个矩形拼接表示，最上面的部分标识类的名称，中间的部分标识类的属性，最下面的部分标识类的方法。
-
+  
   类图中，需注意以下几点：
   
   - 抽象类或抽象方法用斜体表示
@@ -145,7 +149,7 @@ UML2.0 一共有 13 种图（UML1.5 定义了 9 种，UML2.0 增加了 4 种）�
 
   如下所示是图形类接口的 UML 表示。
 
-  ![image-20220424100115188](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424100115188.png)
+  ![image-20220424100115188](GOF 23种设计模式.assets\image-20220424100115188.png)
 
   Graph 接口
 
@@ -155,7 +159,7 @@ UML2.0 一共有 13 种图（UML1.5 定义了 9 种，UML2.0 增加了 4 种）�
 
   类图中的类可以通过某种编程语言直接实现。类图在软件系统开发的整个生命周期都是有效的，它是面向对象系统的建模中最常见的图。如下所示是“计算长方形和圆形的周长与面积”的类图，图形接口有计算面积和周长的抽象方法，长方形和圆形实现这两个方法供访问类调用。
 
-  ![image-20220424100332849](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424100332849.png)
+  ![image-20220424100332849](GOF 23种设计模式.assets\image-20220424100332849.png)
 
   “计算长方形和圆形的周长与面积”的类图
 
@@ -169,7 +173,7 @@ UML 将事物之间的联系归纳为 6 种，并用对应的图形类表示。�
 
   在 UML 类图中，**依赖关系使用带箭头的虚线来表示，箭头从使用类指向被依赖的类**。如下是人与手机的关系图，人通过手机的语音传送方法打电话。
 
-![image-20220424100549986](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424100549986.png)
+![image-20220424100549986](GOF 23种设计模式.assets\image-20220424100549986.png)
 
 - **关联关系**
 
@@ -179,7 +183,7 @@ UML 将事物之间的联系归纳为 6 种，并用对应的图形类表示。�
 
   在代码中通常将一个类的对象作为另一个类的成员变量来实现关联关系。如下是老师和学生的关系图，每个老师可以教多个学生，每个学生也可向多个老师学，他们是双向关联。
 
-![image-20220424100752054](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424100752054.png)
+![image-20220424100752054](GOF 23种设计模式.assets\image-20220424100752054.png)
 
 - **聚合关系**
 
@@ -189,7 +193,7 @@ UML 将事物之间的联系归纳为 6 种，并用对应的图形类表示。�
 
   在 UML 类图中，**聚合关系可以用带空心菱形的实线来表示，菱形指向整体。如下是大学和教师的关系图**。
 
-![image-20220424100841891](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424100841891.png)
+![image-20220424100841891](GOF 23种设计模式.assets\image-20220424100841891.png)
 
 - **组合关系**
 
@@ -199,7 +203,7 @@ UML 将事物之间的联系归纳为 6 种，并用对应的图形类表示。�
 
   在 UML 类图中，**组合关系用带实心菱形的实线来表示，菱形指向整体**。如下是头和嘴的关系图。
 
-![image-20220424101007580](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424101007580.png)
+![image-20220424101007580](GOF 23种设计模式.assets\image-20220424101007580.png)
 
 - **泛化关系**
 
@@ -207,7 +211,7 @@ UML 将事物之间的联系归纳为 6 种，并用对应的图形类表示。�
 
   在 UML 类图中，**泛化关系用带空心三角箭头的实线来表示，箭头从子类指向父类**。在代码实现时，使用面向对象的继承机制来实现泛化关系。例如，Student 类和 Teacher 类都是 Person 类的子类，其类图如下所示。
 
-![image-20220424101042402](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424101042402.png)
+![image-20220424101042402](GOF 23种设计模式.assets\image-20220424101042402.png)
 
 - **实现关系**
 
@@ -215,7 +219,7 @@ UML 将事物之间的联系归纳为 6 种，并用对应的图形类表示。�
 
   在 UML 类图中，实现关系使用带空心三角箭头的虚线来表示，箭头从实现类指向接口。例如，汽车和船实现了交通工具，其类图如下所示。
 
-![image-20220424101152480](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424101152480.png)
+![image-20220424101152480](GOF 23种设计模式.assets\image-20220424101152480.png)
 
 
 
@@ -238,7 +242,7 @@ UML 将事物之间的联系归纳为 6 种，并用对应的图形类表示。�
 
 下面用一个经典案例来加深和巩固对类图的理解。下图是对动物衍生关系描述的类图。这个图非常有技术含量也非常经典，大家可以好好理解一下。
 
-<img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426211323546.png" alt="image-20220426211323546" style="zoom:80%;" />
+<img src="GOF 23种设计模式.assets\image-20220426211323546.png" alt="image-20220426211323546" style="zoom:80%;" />
 
 
 
@@ -395,7 +399,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
 需要特别声明的是，在日常应用中，设计模式从来都不是单个设计模式独立使用的。在实际应用中，通常多个设计模式混合使用，你中有我，我中有你。下图完整地描述了设计模式之间的混用关系，希望对大家有所帮助。
 
-<img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424091245838.png" alt="image-20220424091245838"  />
+<img src="GOF 23种设计模式.assets\image-20220424091245838.png" alt="image-20220424091245838"  />
 
 
 
@@ -638,7 +642,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   - 访问类：使用单例的类。
 
-    <img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424103434690.png" alt="image-20220424103434690" style="zoom: 80%;" />
+    <img src="GOF 23种设计模式.assets\image-20220424103434690.png" alt="image-20220424103434690" style="zoom: 80%;" />
 
   ##### 2.模式的实现
 
@@ -756,7 +760,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   分析：在每一届任期内，美国的总统只有一人，所以本实例适合用单例模式实现，图 2 所示是用懒汉式单例实现的结构图。
 
-  <img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424105108212.png" alt="image-20220424105108212" style="zoom:67%;" />
+  <img src="GOF 23种设计模式.assets\image-20220424105108212.png" alt="image-20220424105108212" style="zoom:67%;" />
 
   ```c#
   namespace SingletonPattern;
@@ -816,7 +820,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   分析：同上例类似，猪八戒也只有一个，所以本实例同样适合用单例模式实现。本实例由于要显示猪八戒的图像（[点此下载该程序所要显示的猪八戒图片](http://c.biancheng.net/uploads/soft/181113/3-1Q1131J636.zip)），所以用到了Nuget包 Spectre.Console / Spectre.Console.ImageSharp，可以获得猪八戒对象，并显示它。图 3 所示是用饿汉式单例实现的结构图。
 
-  ![image-20220424113623404](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424113623404.png)
+  ![image-20220424113623404](GOF 23种设计模式.assets\image-20220424113623404.png)
 
   ```c#
   using Spectre.Console;
@@ -859,7 +863,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   单例模式可扩展为有限的多例（Multitcm）模式，这种模式可生成有限个实例并保存在 ArrayList 中，客户需要时可随机获取，其结构图如图 5 所示。
 
-  ![image-20220424114128511](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424114128511.png)
+  ![image-20220424114128511](GOF 23种设计模式.assets\image-20220424114128511.png)
 
 
 ### 2.原型模式（Prototype）
@@ -906,7 +910,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   3. 访问类：使用具体原型类中的 clone() 方法来复制新的对象。
 
-     <img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424115101405.png" alt="image-20220424115101405"  />
+     <img src="GOF 23种设计模式.assets\image-20220424115101405.png" alt="image-20220424115101405"  />
 
   ##### 2. 模式的实现
 
@@ -1039,23 +1043,23 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   分析：孙悟空拔下猴毛轻轻一吹就变出很多孙悟空，这实际上是用到了原型模式。这里的孙悟空类 SunWukong 是具体原型类。
 
-  ![image-20220424120157503](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424120157503.png)
+  ![image-20220424120157503](GOF 23种设计模式.assets\image-20220424120157503.png)
 
   【例2】用原型模式生成“三好学生”奖状。
 
   分析：同一学校的“三好学生”奖状除了获奖人姓名不同，其他都相同，属于相似对象的复制，同样可以用原型模式创建，然后再做简单修改就可以了。图 4 所示是三好学生奖状生成器的结构图。
 
-  ![image-20220424120258264](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424120258264.png)
+  ![image-20220424120258264](GOF 23种设计模式.assets\image-20220424120258264.png)
 
 - #### 原型模式的扩展
 
   原型模式可扩展为带原型管理器的原型模式，它在原型模式的基础上增加了一个原型管理器 PrototypeManager 类。该类用 HashMap 保存多个复制的原型，Client 类可以通过管理器的 get(String id) 方法从中获取复制的原型。其结构图如图 5 所示。
 
-  ![image-20220424120708039](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424120708039.png)
+  ![image-20220424120708039](GOF 23种设计模式.assets\image-20220424120708039.png)
 
   【例3】用带原型管理器的原型模式来生成包含“圆”和“正方形”等图形的原型，并计算其面积。分析：本实例中由于存在不同的图形类，例如，“圆”和“正方形”，它们计算面积的方法不一样，所以需要用一个原型管理器来管理它们，图 6 所示是其结构图。
 
-  ![image-20220424120803914](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424120803914.png)
+  ![image-20220424120803914](GOF 23种设计模式.assets\image-20220424120803914.png)
 
 ### 3.简单工厂（Simple Factory）(X)
 
@@ -1112,7 +1116,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
   - 抽象产品（Product）：是简单工厂创建的所有对象的父类，负责描述所有实例共有的公共接口。
   - 具体产品（ConcreteProduct）：是简单工厂模式的创建目标。
 
-  ![image-20220424121451906](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424121451906.png)
+  ![image-20220424121451906](GOF 23种设计模式.assets\image-20220424121451906.png)
 
   ##### 2.模式的实现
 
@@ -1238,7 +1242,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
   3. 抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能。
   4. 具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间一一对应。
 
-  ![image-20220423175656853](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220423175656853.png)
+  ![image-20220423175656853](GOF 23种设计模式.assets\image-20220423175656853.png)
 
   ##### 2.模式实现
 
@@ -1329,7 +1333,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   客户端程序通过对象生成器类 ReadXML2 读取 XML 配置文件中的数据来决定养马还是养牛。其结构图如图 2 所示。
 
-  ![image-20220424122627150](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424122627150.png)
+  ![image-20220424122627150](GOF 23种设计模式.assets\image-20220424122627150.png)
 
   注意：当需要生成的产品不多且不会增加，一个具体工厂类就可以完成任务时，可删除抽象工厂类。这时工厂方法模式将退化到简单工厂模式。
 
@@ -1345,7 +1349,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   本节要介绍的抽象工厂模式将考虑多等级产品的生产，将同一个具体工厂所生产的位于不同等级的一组产品称为一个产品族，图 1 所示的是海尔工厂和 TCL 工厂所生产的电视机与空调对应的关系图。
 
-  ![image-20220424122933690](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424122933690.png)
+  ![image-20220424122933690](GOF 23种设计模式.assets\image-20220424122933690.png)
 
 - #### 模式的定义与特点
 
@@ -1390,7 +1394,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
   3. 抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能，抽象工厂模式有多个抽象产品。
   4. 具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间是多对一的关系。
 
-  <img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424123533627.png" alt="image-20220424123533627" style="zoom:80%;" />
+  <img src="GOF 23种设计模式.assets\image-20220424123533627.png" alt="image-20220424123533627" style="zoom:80%;" />
 
   ##### 2.模型实现
 
@@ -1544,7 +1548,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   客户端程序通过对象生成器类 ReadXML 读取 XML 配置文件中的数据来决定养什么动物和培养什么植物（[点此下载 XML 文件](http://c.biancheng.net/uploads/soft/181113/3-1Q114160S7.zip)）。其结构图如图 3 所示。
 
-  <img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424124321062.png" alt="image-20220424124321062" style="zoom:80%;" />
+  <img src="GOF 23种设计模式.assets\image-20220424124321062.png" alt="image-20220424124321062" style="zoom:80%;" />
 
 - #### 模式的扩展
 
@@ -1626,7 +1630,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   4. 指挥者（Director）：它调用建造者对象中的部件构造与装配方法完成复杂对象的创建，在指挥者中不涉及具体产品的信息。
 
-     ![image-20220424125321230](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424125321230.png)
+     ![image-20220424125321230](GOF 23种设计模式.assets\image-20220424125321230.png)
 
   ##### 2.模式的实现
 
@@ -1754,7 +1758,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   另外，客厅类中提供了 show() 方法，可以将装修效果图显示出来（点此下载装修效果图的图片）。客户端程序通过对象生成器类 ReadXML 读取 XML 配置文件中的装修方案数据（点此下载 XML 文件），调用项目经理进行装修。其类图如图 2 所示。
 
-  <img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220424125528637.png" alt="image-20220424125528637" style="zoom:80%;" />
+  <img src="GOF 23种设计模式.assets\image-20220424125528637.png" alt="image-20220424125528637" style="zoom:80%;" />
 
 - #### 模式的扩展
 
@@ -1797,7 +1801,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
 **“组合优于继承”:继承属于强依赖，任何父类的东西，子类必须有，只能为一个父类服务；组合更灵活，还可以为抽象服务**
 
-![image-20220421094421486](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220421094421486.png)
+![image-20220421094421486](GOF 23种设计模式.assets\image-20220421094421486.png)
 
 ### 1.代理模式（Proxy pattern）- AOP
 
@@ -1850,7 +1854,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
   2. 真实主题（Real Subject）类：实现了抽象主题中的具体业务，是代理对象所代表的真实对象，是最终要引用的对象。
   3. 代理（Proxy）类：提供了与真实主题相同的接口，其内部含有对真实主题的引用，它可以访问、控制或扩展真实主题的功能。
 
-  ![image-20220425095016392](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425095016392.png)
+  ![image-20220425095016392](GOF 23种设计模式.assets\image-20220425095016392.png)
 
   在代码中，一般代理会被理解为代码增强，实际上就是在原代码逻辑前后增加一些代码逻辑，而使调用者无感知。
 
@@ -1944,7 +1948,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   分析：本实例中的“婺源特产公司”经营许多婺源特产，它是真实主题，提供了显示特产的 display() 方法，可以用窗体程序实现（[点此下载该实例所要显示的图片](http://c.biancheng.net/uploads/soft/181113/3-1Q115111318.zip)）。而韶关“天街e角”公司是婺源特产公司特产的代理，通过调用婺源特产公司的 display() 方法显示代理产品，当然它可以增加一些额外的处理，如包裝或加价等。客户可通过“天街e角”代理公司间接访问“婺源特产公司”的产品，图 2 所示是公司的结构图。
 
-  ![image-20220425110924961](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425110924961.png)
+  ![image-20220425110924961](GOF 23种设计模式.assets\image-20220425110924961.png)
 
 - #### 代理模式的扩展
 
@@ -1953,7 +1957,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
   1. 真实主题与代理主题一一对应，增加真实主题也要增加代理。
   2. 设计代理以前真实主题必须事先存在，不太灵活。采用动态代理模式可以解决以上问题，如 [Spring](http://c.biancheng.net/spring/)AOP，其结构图如图 4 所示。
 
-  <img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425095918898.png" alt="image-20220425095918898" style="zoom:80%;" />
+  <img src="GOF 23种设计模式.assets\image-20220425095918898.png" alt="image-20220425095918898" style="zoom:80%;" />
 
  
 
@@ -2004,11 +2008,11 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   类适配器模式的结构图如图 1 所示。
 
-  ![image-20220425111500840](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425111500840.png)
+  ![image-20220425111500840](GOF 23种设计模式.assets\image-20220425111500840.png)
 
   对象适配器模式的结构图如图 2 所示。
 
-  ![image-20220425111608639](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425111608639.png)
+  ![image-20220425111608639](GOF 23种设计模式.assets\image-20220425111608639.png)
 
   ##### 2. 模式的实现
 
@@ -2085,13 +2089,13 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   我们把客户端想访问的新能源发动机的适配器的名称放在 XML 配置文件中（[点此下载 XML 文件](http://c.biancheng.net/uploads/soft/181113/3-1Q115110A5.zip)），客户端可以通过对象生成器类 ReadXML 去读取。这样，客户端就可以通过 Motor 接口随便使用任意一种新能源发动机去驱动汽车，图 3 所示是其结构图。
 
-  ![image-20220425112128955](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425112128955.png)
+  ![image-20220425112128955](GOF 23种设计模式.assets\image-20220425112128955.png)
 
 - #### 模式的扩展
 
   适配器模式（Adapter）可扩展为双向适配器模式，双向适配器类既可以把适配者接口转换成目标接口，也可以把目标接口转换成适配者接口，其结构图如图 4 所示。
 
-  ![image-20220425111822850](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425111822850.png)
+  ![image-20220425111822850](GOF 23种设计模式.assets\image-20220425111822850.png)
 
 
 
@@ -2134,7 +2138,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   因为父类拥有的方法，子类也会继承得到，无论子类需不需要，这说明继承具备强侵入性（父类代码侵入子类），同时会导致子类臃肿。因此，在[设计模式](http://c.biancheng.net/design_pattern/)中，有一个原则为优先使用组合/聚合，而不是继承。
 
-  ![image-20220425120052506](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425120052506.png)
+  ![image-20220425120052506](GOF 23种设计模式.assets\image-20220425120052506.png)
 
 
   很多时候，我们分不清该使用继承还是组合/聚合或其他方式等，其实可以从现实语义进行思考。因为软件最终还是提供给现实生活中的人使用的，是服务于人类社会的，软件是具备现实场景的。当我们从纯代码角度无法看清问题时，现实角度可能会提供更加开阔的思路。
@@ -2154,7 +2158,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   其结构图如图 1 所示。
 
-  ![image-20220425115746138](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425115746138.png)
+  ![image-20220425115746138](GOF 23种设计模式.assets\image-20220425115746138.png)
 
   ##### 2. 模式的实现
 
@@ -2233,13 +2237,13 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   客户类通过 ReadXML 类从 XML 配置文件中获取包信息（[点此下载 XML 配置文件](http://c.biancheng.net/uploads/soft/181113/3-1Q115130045.zip)），并把选到的产品通过窗体显示出现，图 2 所示是其结构图。
 
-  ![image-20220425115946682](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425115946682.png)
+  ![image-20220425115946682](GOF 23种设计模式.assets\image-20220425115946682.png)
 
 - #### 模式的扩展
 
   在软件开发中，有时桥接（Bridge）模式可与[适配器模式](http://c.biancheng.net/view/1361.html)联合使用。当桥接（Bridge）模式的实现化角色的接口与现有类的接口不一致时，可以在二者中间定义一个适配器将二者连接起来，其具体结构图如图 5 所示。
 
-  ![image-20220425120141030](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425120141030.png)
+  ![image-20220425120141030](GOF 23种设计模式.assets\image-20220425120141030.png)
 
   
 
@@ -2286,7 +2290,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   装饰器模式的结构图如图 1 所示。
 
-  ![image-20220425193738276](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425193738276.png)
+  ![image-20220425193738276](GOF 23种设计模式.assets\image-20220425193738276.png)
 
   ##### 2. 模式的实现
 
@@ -2390,7 +2394,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   分析：在《恶魔战士》中，游戏角色“莫莉卡·安斯兰”的原身是一个可爱少女，但当她变身时，会变成头顶及背部延伸出蝙蝠状飞翼的女妖，当然她还可以变为穿着漂亮外衣的少女。这些都可用装饰器模式来实现，在本实例中的“莫莉卡”原身有 setImage(String t) 方法决定其显示方式，而其 变身“蝙蝠状女妖”和“着装少女”可以用 setChanger() 方法来改变其外观，原身与变身后的效果用 display() 方法来显示（[点此下载其原身和变身后的图片](http://c.biancheng.net/uploads/soft/181113/3-1Q115142F6.zip)），图 2 所示是其结构图。
 
-  ![image-20220425200656092](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425200656092.png)
+  ![image-20220425200656092](GOF 23种设计模式.assets\image-20220425200656092.png)
 
 - #### 模式的扩展
 
@@ -2398,11 +2402,11 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   (1) 如果只有一个具体构件而没有抽象构件时，可以让抽象装饰继承具体构件，其结构图如图 4 所示。
 
-  ![image-20220425200758437](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425200758437.png)
+  ![image-20220425200758437](GOF 23种设计模式.assets\image-20220425200758437.png)
 
   (2) 如果只有一个具体装饰时，可以将抽象装饰和具体装饰合并，其结构图如图 5 所示。
 
-  ![image-20220425200843550](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425200843550.png)
+  ![image-20220425200843550](GOF 23种设计模式.assets\image-20220425200843550.png)
 
   
 
@@ -2416,7 +2420,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   图 1 给出了客户去当地房产局办理房产证过户要遇到的相关部门。
 
-  ![image-20220425205815293](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425205815293.png)
+  ![image-20220425205815293](GOF 23种设计模式.assets\image-20220425205815293.png)
 
 - #### 模式的定义与特点
 
@@ -2457,7 +2461,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   其结构图如图 2 所示。
 
-  ![image-20220425210118287](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425210118287.png)
+  ![image-20220425210118287](GOF 23种设计模式.assets\image-20220425210118287.png)
 
   ##### 2. 模式的实现
 
@@ -2528,13 +2532,13 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   客户窗体对象用分割面板来实现，左边放外观角色的目录树，右边放显示所选特产图像的标签。其结构图如图 3 所示。
 
-  ![image-20220425210619165](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425210619165.png)
+  ![image-20220425210619165](GOF 23种设计模式.assets\image-20220425210619165.png)
 
 - #### 模式的扩展
 
   在外观模式中，当增加或移除子系统时需要修改外观类，这违背了“开闭原则”。如果引入抽象外观类，则在一定程度上解决了该问题，其结构图如图 5 所示。
 
-  ![image-20220425210712475](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220425210712475.png)
+  ![image-20220425210712475](GOF 23种设计模式.assets\image-20220425210712475.png)
 
 
 
@@ -2604,7 +2608,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   - 客户角色通过享元工厂获取具体享元，并访问具体享元的相关方法。
 
-    ![image-20220426080644377](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426080644377.png)
+    ![image-20220426080644377](GOF 23种设计模式.assets\image-20220426080644377.png)
 
   ##### 2. 模式的实现
 
@@ -2706,7 +2710,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   图 2 所示是其结构图。
 
-  ![image-20220426103952610](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426103952610.png)
+  ![image-20220426103952610](GOF 23种设计模式.assets\image-20220426103952610.png)
 
 - #### 模式的扩展
 
@@ -2714,11 +2718,11 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   (1) 单纯享元模式，这种享元模式中的所有的具体享元类都是可以共享的，不存在非共享的具体享元类，其结构图如图 4 所示。
 
-  ![image-20220426104235342](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426104235342.png)
+  ![image-20220426104235342](GOF 23种设计模式.assets\image-20220426104235342.png)
 
   (2) 复合享元模式，这种享元模式中的有些享元对象是由一些单纯享元对象组合而成的，它们就是复合享元对象。虽然复合享元对象本身不能共享，但它们可以分解成单纯享元对象再被共享，其结构图如图 5 所示。
 
-  ![image-20220426104308083](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426104308083.png)
+  ![image-20220426104308083](GOF 23种设计模式.assets\image-20220426104308083.png)
 
 
 
@@ -2734,7 +2738,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   组合模式一般用来描述整体与部分的关系，它将对象组织到树形结构中，顶层的节点被称为根节点，根节点下面可以包含树枝节点和叶子节点，树枝节点下面又可以包含树枝节点和叶子节点，树形结构图如下。
 
-  <img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426105403831.png" alt="image-20220426105403831" style="zoom:80%;" />
+  <img src="GOF 23种设计模式.assets\image-20220426105403831.png" alt="image-20220426105403831" style="zoom:80%;" />
 
   由上图可以看出，其实根节点和树枝节点本质上属于同一种数据类型，可以作为容器使用；而叶子节点与树枝节点在语义上不属于用一种类型。但是在组合模式中，会把树枝节点和叶子节点看作属于同一种数据类型（用统一接口定义），让它们具备一致行为。
 
@@ -2777,19 +2781,19 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   在该方式中，由于抽象构件声明了所有子类中的全部方法，所以客户端无须区别树叶对象和树枝对象，对客户端来说是透明的。但其缺点是：树叶构件本来没有 Add()、Remove() 及 GetChild() 方法，却要实现它们（空实现或抛异常），这样会带来一些安全性问题。其结构图如图 1 所示。
 
-  ![image-20220426105626877](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426105626877.png)
+  ![image-20220426105626877](GOF 23种设计模式.assets\image-20220426105626877.png)
 
   **(2) 安全方式**
 
   在该方式中，将管理子构件的方法移到树枝构件中，抽象构件和树叶构件没有对子对象的管理方法，这样就避免了上一种方式的安全性问题，但由于叶子和分支有不同的接口，客户端在调用时要知道树叶对象和树枝对象的存在，所以失去了透明性。其结构图如图 2 所示。
 
-  ![image-20220426105655052](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426105655052.png)
+  ![image-20220426105655052](GOF 23种设计模式.assets\image-20220426105655052.png)
 
   ##### 2. 模式的实现
 
   假如要访问集合 c0={leaf1,{leaf2,leaf3}} 中的元素，其对应的树状图如图 3 所示。
 
-  ![image-20220426105726530](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426105726530.png)
+  ![image-20220426105726530](GOF 23种设计模式.assets\image-20220426105726530.png)
 
   **(1) 透明组合模式**
 
@@ -2917,13 +2921,13 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   本实例可按安全组合模式设计，其结构图如图 4 所示。
 
-  ![image-20220426105859799](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426105859799.png)
+  ![image-20220426105859799](GOF 23种设计模式.assets\image-20220426105859799.png)
 
 - #### 模式的扩展
 
   如果对前面介绍的组合模式中的树叶节点和树枝节点进行抽象，也就是说树叶节点和树枝节点还有子节点，这时组合模式就扩展成复杂的组合模式了，如 [Java](http://c.biancheng.net/java/) AWT/[Swing](http://c.biancheng.net/swing/) 中的简单组件 JTextComponent 有子类 JTextField、JTextArea，容器组件 Container 也有子类 Window、Panel。复杂的组合模式的结构图如图 5 所示。
 
-  ![image-20220426105940353](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426105940353.png)
+  ![image-20220426105940353](GOF 23种设计模式.assets\image-20220426105940353.png)
 
   
 
@@ -3014,7 +3018,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   模板方法模式的结构图如图 1 所示。
 
-  ![image-20220426122003514](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426122003514.png)
+  ![image-20220426122003514](GOF 23种设计模式.assets\image-20220426122003514.png)
 
   ##### 2. 模式的实现
 
@@ -3074,7 +3078,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   在本实例中，我们先定义一个出国留学的抽象类 StudyAbroad，里面包含了一个模板方法 TemplateMethod()，该方法中包含了办理出国留学手续流程中的各个基本方法，其中有些方法的处理由于各国都一样，所以在抽象类中就可以实现，但有些方法的处理各国是不同的，必须在其具体子类（如美国留学类 StudyInAmerica）中实现。如果再增加一个国家，只要增加一个子类就可以了，图 2 所示是其结构图。
 
-  ![image-20220426122118113](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426122118113.png)
+  ![image-20220426122118113](GOF 23种设计模式.assets\image-20220426122118113.png)
 
   ```c#
   namespace TemplateMethodPattern;
@@ -3180,7 +3184,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   在模板方法模式中，基本方法包含：抽象方法、具体方法和钩子方法，正确使用“钩子方法”可以使得子类控制父类的行为。如下面例子中，可以通过在具体子类中重写钩子方法 HookMethod1() 和 HookMethod2() 来改变抽象父类中的运行结果，其结构图如图 3 所示。
 
-  ![image-20220426122203902](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426122203902.png)
+  ![image-20220426122203902](GOF 23种设计模式.assets\image-20220426122203902.png)
 
   
 
@@ -3235,7 +3239,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   其结构图如图 1 所示。
 
-  ![image-20220426155959384](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426155959384.png)
+  ![image-20220426155959384](GOF 23种设计模式.assets\image-20220426155959384.png)
 
   ##### 2. 策略模式的实现
 
@@ -3298,13 +3302,13 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   首先，定义一个大闸蟹加工的抽象策略类（CrabCooking），里面包含了一个做菜的抽象方法 CookingMethod()；然后，定义清蒸大闸蟹（SteamedCrabs）和红烧大闸蟹（BraisedCrabs）的具体策略类，它们实现了抽象策略类中的抽象方法；由于本程序要显示做好的结果图（[点此下载要显示的结果图](http://c.biancheng.net/uploads/soft/181113/3-1Q116104147.zip)），所以将具体策略类定义成 JLabel 的子类；最后，定义一个厨房（Kitchen）环境类，它具有设置和选择做菜策略的方法；客户类通过厨房类获取做菜策略，并把做菜结果图在窗体中显示出来，图 2 所示是其结构图。
 
-  ![image-20220426160117215](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426160117215.png)
+  ![image-20220426160117215](GOF 23种设计模式.assets\image-20220426160117215.png)
 
   【例2】用策略模式实现从韶关去婺源旅游的出行方式。
 
   分析：从韶关去婺源旅游有以下几种出行方式：坐火车、坐汽车和自驾车，所以该实例用策略模式比较适合，图 4 所示是其结构图。
 
-  ![image-20220426160209735](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426160209735.png)
+  ![image-20220426160209735](GOF 23种设计模式.assets\image-20220426160209735.png)
 
   
 
@@ -3312,7 +3316,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   在一个使用策略模式的系统中，当存在的策略很多时，客户端管理所有策略算法将变得很复杂，如果在环境类中使用策略工厂模式来管理这些策略类将大大减少客户端的工作复杂度，其结构图如图 5 所示。
 
-  ![image-20220426160248320](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426160248320.png)
+  ![image-20220426160248320](GOF 23种设计模式.assets\image-20220426160248320.png)
 
   
 
@@ -3369,7 +3373,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   其结构图如图 1 所示。
 
-  ![image-20220426163600355](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426163600355.png)
+  ![image-20220426163600355](GOF 23种设计模式.assets\image-20220426163600355.png)
 
   ##### 2. 模式的实现
 
@@ -3450,13 +3454,13 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   由于本实例要显示厨师做菜的效果图（[点此下载要显示的效果图](http://c.biancheng.net/uploads/soft/181113/3-1Q116125200.zip)），所以把每个厨师类定义为 JFrame 的子类；最后，定义服务员类（Waiter），它接收客户的做菜请求，并发出做菜的命令。客户类是通过服务员类来点菜的，图 2 所示是其结构图。
 
-  ![image-20220426163652710](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426163652710.png)
+  ![image-20220426163652710](GOF 23种设计模式.assets\image-20220426163652710.png)
 
 - #### 模式的扩展
 
   在软件开发中，有时将命令模式与前面学的组合模式联合使用，这就构成了宏命令模式，也叫组合命令模式。宏命令包含了一组命令，它充当了具体命令与调用者的双重角色，执行它时将递归调用它所包含的所有命令，其具体结构图如图 3 所示。
 
-  ![image-20220426163732708](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426163732708.png)
+  ![image-20220426163732708](GOF 23种设计模式.assets\image-20220426163732708.png)
 
   当然，命令模式还可以同备忘录（Memento）模式组合使用，这样就变成了可撤销的命令模式，这将在后面介绍。
 
@@ -3518,9 +3522,9 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   其结构图如图 1 所示。客户端可按图 2 所示设置责任链。
 
-  ![image-20220426211656581](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426211656581.png)
+  ![image-20220426211656581](GOF 23种设计模式.assets\image-20220426211656581.png)
 
-  ![image-20220426211737547](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426211737547.png)
+  ![image-20220426211737547](GOF 23种设计模式.assets\image-20220426211737547.png)
 
   **2.模式的实现**
 
@@ -3606,7 +3610,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   首先，定义一个领导类（Leader），它是抽象处理者，包含了一个指向下一位领导的指针 next 和一个处理假条的抽象处理方法 handleRequest(int LeaveDays)；然后，定义班主任类（ClassAdviser）、系主任类（DepartmentHead）和院长类（Dean），它们是抽象处理者的子类，是具体处理者，必须根据自己的权力去实现父类的 handleRequest(int LeaveDays) 方法，如果无权处理就将假条交给下一位具体处理者，直到最后；客户类负责创建处理链，并将假条交给链头的具体处理者（班主任）。图 3 所示是其结构图。
 
-  ![image-20220426211820462](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220426211820462.png)
+  ![image-20220426211820462](GOF 23种设计模式.assets\image-20220426211820462.png)
 
   ```c#
   namespace ChainOfResponsibilityPattern;
@@ -3846,7 +3850,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   其结构图如图 1 所示。
 
-  ![image-20220427113031185](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427113031185.png)
+  ![image-20220427113031185](GOF 23种设计模式.assets\image-20220427113031185.png)
 
   ##### 2. 模式的实现
 
@@ -3930,23 +3934,23 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   最后，定义环境类（ScoreContext），其中包含了当前状态对象和加减分的方法 add(int score)，客户类通过该方法来改变成绩状态。图 2 所示是其结构图。
 
-  ![image-20220427113101876](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427113101876.png)
+  ![image-20220427113101876](GOF 23种设计模式.assets\image-20220427113101876.png)
 
   【例2】用“状态模式”设计一个多线程的状态转换程序。
 
   分析：多线程存在 5 种状态，分别为新建状态、就绪状态、运行状态、阻塞状态和死亡状态，各个状态当遇到相关方法调用或事件触发时会转换到其他状态，其状态转换规律如图 3 所示。
 
-  ![image-20220427113201293](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427113201293.png)
+  ![image-20220427113201293](GOF 23种设计模式.assets\image-20220427113201293.png)
 
   现在先定义一个抽象状态类（TheadState），然后为图 3 所示的每个状态设计一个具体状态类，它们是新建状态（New）、就绪状态（Runnable ）、运行状态（Running）、阻塞状态（Blocked）和死亡状态（Dead），每个状态中有触发它们转变状态的方法，环境类（ThreadContext）中先生成一个初始状态（New），并提供相关触发方法，图 4 所示是线程状态转换程序的结构图。
 
-  ![image-20220427113223757](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427113223757.png)
+  ![image-20220427113223757](GOF 23种设计模式.assets\image-20220427113223757.png)
 
 - #### 模式的扩展
 
   在有些情况下，可能有多个环境对象需要共享一组状态，这时需要引入享元模式，将这些具体状态对象放在集合中供程序共享，其结构图如图 5 所示。
 
-  ![image-20220427113313711](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427113313711.png)
+  ![image-20220427113313711](GOF 23种设计模式.assets\image-20220427113313711.png)
 
   分析：共享状态模式的不同之处是在环境类中增加了一个 HashMap 来保存相关状态，当需要某种状态时可以从中获取，其程序代码如下：
 
@@ -4017,7 +4021,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   观察者模式的结构图如图 1 所示。
 
-  ![image-20220427143114169](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427143114169.png)
+  ![image-20220427143114169](GOF 23种设计模式.assets\image-20220427143114169.png)
 
   ##### 2. 观察者模式的实现
 
@@ -4102,7 +4106,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   这里的汇率（Rate）类是抽象目标类，它包含了保存观察者（Company）的 List 和增加/删除观察者的方法，以及有关汇率改变的抽象方法 change(int number)；而人民币汇率（RMBrate）类是具体目标， 它实现了父类的 change(int number) 方法，即当人民币汇率发生改变时通过相关公司；公司（Company）类是抽象观察者，它定义了一个有关汇率反应的抽象方法 response(int number)；进口公司（ImportCompany）类和出口公司（ExportCompany）类是具体观察者类，它们实现了父类的 response(int number) 方法，即当它们接收到汇率发生改变的通知时作为相应的反应。图 2 所示是其结构图。
 
-  ![image-20220427143239709](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427143239709.png)
+  ![image-20220427143239709](GOF 23种设计模式.assets\image-20220427143239709.png)
 
   ```c#
   
@@ -4116,7 +4120,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   现在用“观察者模式”来实现该事件处理模型。
 
-  ![image-20220427143334446](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427143334446.png)
+  ![image-20220427143334446](GOF 23种设计模式.assets\image-20220427143334446.png)
 
   首先，定义一个铃声事件（RingEvent）类，它记录了铃声的类型（上课铃声/下课铃声）。
 
@@ -4126,7 +4130,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   最后，定义老师类（TeachEventListener）和学生类（StuEventListener），它们是事件监听器，是具体观察者，听到铃声会去上课或下课。图 4 给出了学校铃声事件处理程序的结构。
 
-  ![image-20220427143403724](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427143403724.png)
+  ![image-20220427143403724](GOF 23种设计模式.assets\image-20220427143403724.png)
 
 - #### 观察者模式的扩展
 
@@ -4148,7 +4152,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
   
   分析：当原油价格上涨时，空方伤心，多方局兴；当油价下跌时，空方局兴，多方伤心。本实例中的抽象目标（Observable）类在 Java 中已经定义，可以直接定义其子类，即原油期货（OilFutures）类，它是具体目标类，该类中定义一个 SetPriCe(float price) 方法，当原油数据发生变化时调用其父类的 notifyObservers(Object arg) 方法来通知所有观察者；另外，本实例中的抽象观察者接口（Observer）在 Java 中已经定义，只要定义其子类，即具体观察者类（包括多方类 Bull 和空方类 Bear），并实现 update(Observable o,Object arg) 方法即可。图 5 所示是其结构图。
   
-  ![image-20220427143458992](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427143458992.png)
+  ![image-20220427143458992](GOF 23种设计模式.assets\image-20220427143458992.png)
   
   
 
@@ -4196,7 +4200,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   中介者模式的结构图如图 1 所示。
 
-  ![image-20220427143728815](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427143728815.png)
+  ![image-20220427143728815](GOF 23种设计模式.assets\image-20220427143728815.png)
 
   ##### 2. 模式的实现
 
@@ -4301,7 +4305,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   最后，定义卖方（Seller）类和买方（Buyer）类，它们是具体同事类，是客户（Customer）类的子类，它们实现了父类中的抽象方法，通过中介者类进行信息交流，其结构图如图 2 所示。
 
-  ![image-20220427143811252](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427143811252.png)
+  ![image-20220427143811252](GOF 23种设计模式.assets\image-20220427143811252.png)
 
 - #### 模式的扩展
 
@@ -4312,7 +4316,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
   
   图 4 所示是简化中介者模式的结构图。
   
-  ![image-20220427143926468](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427143926468.png)
+  ![image-20220427143926468](GOF 23种设计模式.assets\image-20220427143926468.png)
   
   
 
@@ -4370,7 +4374,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   其结构图如图 1 所示。
 
-  ![image-20220427144241928](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144241928.png)
+  ![image-20220427144241928](GOF 23种设计模式.assets\image-20220427144241928.png)
 
   ##### 2. 模式的实现
 
@@ -4481,13 +4485,13 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   最后，定义婺源景点的具体迭代器（WyViewSpotlterator）类，它实现了父类的抽象方法；客户端程序设计成窗口程序，它初始化婺源景点集（ViewSpotSet）中的数据，并实现 ActionListener 接口，它通过婺源景点迭代器（ViewSpotlterator）来査看婺源景点（WyViewSpot）的信息。图 2 所示是其结构图。
 
-  ![image-20220427144323033](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144323033.png)
+  ![image-20220427144323033](GOF 23种设计模式.assets\image-20220427144323033.png)
 
 - #### 模式的扩展
 
   迭代器模式常常与[组合模式](http://c.biancheng.net/view/1373.html)结合起来使用，在对组合模式中的容器构件进行访问时，经常将迭代器潜藏在组合模式的容器构成类中。当然，也可以构造一个外部迭代器来对容器构件进行访问，其结构图如图 4 所示。
   
-  ![image-20220427144405196](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144405196.png)
+  ![image-20220427144405196](GOF 23种设计模式.assets\image-20220427144405196.png)
   
   
 
@@ -4546,7 +4550,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   其结构图如图 1 所示。
 
-  ![image-20220427144545910](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144545910.png)
+  ![image-20220427144545910](GOF 23种设计模式.assets\image-20220427144545910.png)
 
   ##### 2. 模式的实现
 
@@ -4691,7 +4695,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   最后，定义一个材料集（SetMaterial）类，它是对象结构角色，拥有保存所有元素的容器 List，并提供让访问者对象遍历容器中的所有元素的 accept（Company visitor）方法；客户类设计成窗体程序，它提供材料集（SetMaterial）对象供访问者（Company）对象访问，实现了 ItemListener 接口，处理用户的事件请求。图 2 所示是其结构图。
 
-  ![image-20220427144622191](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144622191.png)
+  ![image-20220427144622191](GOF 23种设计模式.assets\image-20220427144622191.png)
 
 - #### 模式的扩展
 
@@ -4701,7 +4705,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   (2)访问者（Visitor）模式同“[组合模式](http://c.biancheng.net/view/1373.html)”联用。因为访问者（Visitor）模式中的“元素对象”可能是叶子对象或者是容器对象，如果元素对象包含容器对象，就必须用到[组合模式](http://c.biancheng.net/view/1373.html)，其结构图如图 4 所示。
 
-  ![image-20220427144659049](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144659049.png)
+  ![image-20220427144659049](GOF 23种设计模式.assets\image-20220427144659049.png)
 
 
 
@@ -4749,7 +4753,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   备忘录模式的结构图如图 1 所示。
 
-  ![image-20220427144811161](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144811161.png)
+  ![image-20220427144811161](GOF 23种设计模式.assets\image-20220427144811161.png)
 
   ##### 2. 模式的实现
 
@@ -4853,13 +4857,13 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   客户类设计成窗体程序，它包含美女栈（GirlStack）对象和相亲者（You）对象，它实现了 ActionListener 接口的事件处理方法 actionPerformed(ActionEvent e)，并将 4 大美女图像和相亲者（You）选择的美女图像在窗体中显示出来。图 2 所示是其结构图。
 
-  ![image-20220427144839511](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144839511.png)
+  ![image-20220427144839511](GOF 23种设计模式.assets\image-20220427144839511.png)
 
 - #### 模式的扩展
 
   在前面介绍的备忘录模式中，有单状态备份的例子，也有多状态备份的例子。下面介绍备忘录模式如何同[原型模式](http://c.biancheng.net/view/1343.html)混合使用。在备忘录模式中，通过定义“备忘录”来备份“发起人”的信息，而原型模式的 clone() 方法具有自备份功能，所以，如果让发起人实现 Cloneable 接口就有备份自己的功能，这时可以删除备忘录类，其结构图如图 4 所示。
   
-  ![image-20220427144905372](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427144905372.png)
+  ![image-20220427144905372](GOF 23种设计模式.assets\image-20220427144905372.png)
   
   #### 拓展
   
@@ -4931,7 +4935,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   语法树是句子结构的一种树型表示，它代表了句子的推导结果，它有利于理解句子语法结构的层次。图 1 所示是“我是大学生”的语法树。
 
-  ![image-20220427145143625](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427145143625.png)
+  ![image-20220427145143625](GOF 23种设计模式.assets\image-20220427145143625.png)
 
   有了以上基础知识，现在来介绍解释器模式的结构就简单了。解释器模式的结构与[组合模式](http://c.biancheng.net/view/1373.html)相似，不过其包含的组成元素比组合模式多，而且组合模式是对象结构型模式，而解释器模式是类行为型模式。
 
@@ -4947,7 +4951,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
 
   解释器模式的结构图如图 2 所示。
 
-  ![image-20220427145214559](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427145214559.png)
+  ![image-20220427145214559](GOF 23种设计模式.assets\image-20220427145214559.png)
 
   ##### 2. 模式的实现
 
@@ -5034,7 +5038,7 @@ UMLet 在 Eclipse 中的使用方法同前面介绍的一样。
   - 定义一个非终结符表达式（AndExpressicm）类，它也是抽象表达式的子类，它包含满足条件的城市的终结符表达式对象和满足条件的人员的终结符表达式对象，并实现 interpret(String info) 方法，用来判断被分析的字符串是否是满足条件的城市中的满足条件的人员。
   - 最后，定义一个环境（Context）类，它包含解释器需要的数据，完成对终结符表达式的初始化，并定义一个方法 freeRide(String info) 调用表达式对象的解释方法来对被分析的字符串进行解释。其结构图如图 3 所示。
 
-  ![image-20220427145315702](C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220427145315702.png)
+  ![image-20220427145315702](GOF 23种设计模式.assets\image-20220427145315702.png)
 
 - #### 模式的扩展
 

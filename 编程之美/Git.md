@@ -8,7 +8,7 @@
 
 Git将项目的存储分为4部分，每部分有自己的作用加下图：
 
-<img src="C:\Users\xzzha\AppData\Roaming\Typora\typora-user-images\image-20220507165252142.png" alt="image-20220507165252142" style="zoom:80%;" />
+<img src="Git.assets\image-20220507165252142.png" alt="image-20220507165252142" style="zoom:80%;" />
 
 * Workspance：工作区（当前用户操作修改的区域）
 * Index / Stage：暂存区（add后的区域）
