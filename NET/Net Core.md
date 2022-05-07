@@ -1,0 +1,339 @@
+# 一. MiddleWare - 管道中间件
+
+## 1. 中间件 实现原理
+
+```c#
+/*
+	app.User - 装在管道不运行
+	next.Invoke() - 下一个管道
+	app.Run - 运行管道
+*/
+app.Use(async (context, next) =>
+{
+    await context.Response.WriteAsync("<html><body>");
+    await context.Response.WriteAsync("<div>Inside middleware defined using app.Use</div>");
+    await next();
+    await context.Response.WriteAsync("</body></html>");
+});
+
+app.Run(async context => { 
+    await context.Response.WriteAsync("<div>Inside middleware defined using app.Run</div>"); 
+});
+
+//该管道会不会被打印呢？
+app.Use(async (context, next) =>
+{
+    await context.Response.WriteAsync("<html><body>");
+    await context.Response.WriteAsync("<div>Another Middleware defined using app.Use</div>");
+    await next();
+    await context.Response.WriteAsync("</body></html>");
+});
+```
+
+
+
+## 2. 中间件 封装
+
+**封装内容**
+
+```c#
+public class CustomMiddleWare
+{
+    private readonly RequestDelegate _next;
+    //依赖注入
+    public CustomMiddleWare(RequestDelegate next)
+    {
+    	this._next = next;
+    }
+
+    public async Task Invoke(HttpContext context)
+    {
+        await context.Response.WriteAsync($"{nameof(CustomMiddleWare)},Hello World1!<br/>");
+        await _next(context);
+        await context.Response.WriteAsync($"{nameof(CustomMiddleWare)},Hello World2!<br/>");
+    }
+}
+```
+
+**注册使用 1.0** 
+
+```c#
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.UseMiddleware<CustomMiddleWare>();
+}
+```
+
+**注册使用 2.0**
+
+```c#
+//进一步封装
+public static class MiddleExtend
+{
+    public static IApplicationBuilder UseCustomMiddleWare(this IApplicationBuilder builder)
+    {
+        return builder.UseMiddleware<CustomMiddleWare>();
+    }
+}
+//注册使用
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.UseCustomMiddleWare();
+}    
+```
+
+
+
+# 二. Getway - 网关
+
+## 网关实践
+
+> .Net Core微服务网关Ocelot集成Consul的方法，可以自主选择负载均衡策略，灵活性更强。
+
+### 1. APIGateway
+
+**a.添加Nuget包 - Ocelot**
+
+```perl
+#向Consul注册服务实例需要在Gateway项目中引用Consul支持的NuGet软件包
+Install-Package Ocelot.Provider.Consul
+```
+
+**b.注册Ocelot服务**
+
+```c#
+services.AddOcelot().AddConsul();
+```
+
+**c.注册Ocelot中间件**
+
+```perl
+app.UseOcelot().Wait();
+```
+
+**d.添加配置文件ocelot.json**
+
+```json
+{
+    "Routes": [
+        {
+            //服务地址 - "/api/ServiceUrl",
+            "DownstreamPathTemplate": "/api/{url}",
+            "DownstreamScheme": "http",
+            //常规的转发规则，可以多个服务，自行负载均衡
+            //"DownstreamHostAndPorts": [
+            //    {
+            //        "Host": "localhost",
+            //        "Port": 9001
+            //    }
+            //],
+            
+            //网关地址 - //"/api/GetwayUrl",
+            "UpStreamPathTemplate": "/apiGetway/{url}",
+            "UpstreamHttpMethod": [ "Get", "Post" ],
+            
+            //consul 服务名称
+            "ServiceName": "BaseSysMgmt",
+            //启动服务发现
+            "UseServiceDiscovery": true,
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            },
+            /*
+                LoadBalancerOptions（负载均衡），官方实现了4个负载均衡器，分别是：
+                    1、LeastConnection - 跟踪哪些服务正在处理请求，并向现有请求最少的服务发送新请求。
+                    2、RoundRobin - 轮询。
+                    3、NoLoadBalancer - 从配置或服务发现中获取第一个可用服务。
+                    4、CookieStickySessions - 使用 cookie 将所有请求粘贴到特定服务器。
+
+                //如果选择第四个 - 需要额外的参数来描述cookie。如下：
+                "LoadBalancerOptions": {
+                    "Type": "CookieStickySessions",
+                    "Key": "ASP.NET_SessionId",
+                    "Expiry": 1800000 //过期时间
+                },
+            */
+            
+            //缓存
+            //"FileCacheOptions":{
+            //    "TilSeconds":10,
+            //},
+            
+            //限流
+            //"RateLimitOptions":{
+            //	"ClientWhitelist":[], //白名单
+            //    "EnableRateLimiting": true,
+            //    "Period": "5m", //1s, 5m. 1h, 1d
+            //    "PeriodTimespan": 5, //多少秒之后客户端可以重试
+            //    “Limit”： 5, //统计时间段内允许最大的请求数量
+        	//},
+            
+            //熔断
+            //"QoSOption": {
+                //允许多少个异常请求
+            //	"ExceptionAllowedBeforeBreaking": 3, 
+                //熔断的时间，单位为ms
+            //	"DurationOfBreak": 10000, 
+	            //如果下游请求的处理时间超过多少时设置超时时间 默认90秒
+            //	"TimeoutValue": 10000, 
+        	//}
+            
+            //"ReRoutesCaseSensitive": false,
+        }
+    ],
+    //集成consul以后新增的配置。
+    "GlobalConfiguration": {
+        //服务发现配置
+        "ServiceDiscoveryProvider": {
+            //注册中心Consul地址
+            "Host": "192.168.3.7",
+            //注册中心Consul端口号
+            "Port": 8500,
+            //注册中心类型
+            "Type": "Consul",
+            //以毫秒为单位，告诉Ocelot多久调用一次Consul来更改服务配置。
+            "PollingInterval": 100,
+            //如果你有在Consul上配置key/value，则在这里输入配置key。
+            "ConfigurationKey": "BaseSysMgmt"
+        },
+        //"RateLimitOptions": {
+            //请求过载被截断时返回的消息
+        //    "QuotaExceededMessage": "Too many requests, maybe later!!",
+            //当请求过载时被截断时返回的http status
+        //    "HttpStatusCode": 666,
+        //}
+    },
+}
+```
+
+### 2. Common
+
+先安装Consul的NuGet软件包，安装命令如下：
+
+```
+Install -Package Consul
+```
+
+> 在该项目添加一个AppExtensions扩展类，用来对服务APIServiceA、APIServiceB项目在Consul注册实例，为了展示效果，具体代码稍作修改如下：
+
+```c#
+public static class AppExtensions
+{
+    public static IServiceCollection AddConsulConfig(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddSingleton<IConsulClient, ConsulClient>(p => new ConsulClient(consulConfig =>
+        {
+            var address = configuration.GetValue<string>("Consul:Host");
+            consulConfig.Address = new Uri(address);
+        }));
+        return services;
+    }
+    public static IApplicationBuilder UseConsul(this IApplicationBuilder app, string host = null, string port = null)
+    {
+        //获取consul客户端实例
+        var consulClient = app.ApplicationServices.GetRequiredService<IConsulClient>();
+        var logger = app.ApplicationServices.GetRequiredService<ILoggerFactory>().CreateLogger("AppExtensions");
+        var lifetime = app.ApplicationServices.GetRequiredService<IApplicationLifetime>();
+ 
+        if (!(app.Properties["server.Features"] is FeatureCollection features)) return app;
+ 
+        //var addresses = features.Get<IServerAddressesFeature>();
+        //var address = addresses.Addresses.FirstOrDefault();
+        //if (address == null)
+        //{
+        //    return app;
+        //}
+ 
+        var address = host + ":" + port;
+        if (string.IsNullOrWhiteSpace(host) || string.IsNullOrWhiteSpace(port))
+        {
+            Console.WriteLine($"host或者port为空！");
+            return app;
+        }
+ 
+        Console.WriteLine($"address={address}");
+        var uri = new Uri(address);
+        Console.WriteLine($"host={uri.Host},port={uri.Port}");
+ 
+        var registration = new AgentServiceRegistration()
+        {
+            ID = $"MyService-{uri.Port}",
+            Name = "MyService",
+            Address = $"{uri.Host}",
+            Port = uri.Port,
+            Check = new AgentServiceCheck()
+            {
+                DeregisterCriticalServiceAfter = TimeSpan.FromSeconds(5),//服务启动多久后注册
+                Interval = TimeSpan.FromSeconds(10),//健康检查时间间隔
+                HTTP = $"{address}/HealthCheck",//健康检查地址
+                Timeout = TimeSpan.FromSeconds(5)//超时时间
+            }
+        };
+        logger.LogInformation("Registering with Consul");
+        logger.LogInformation($"Consul RegistrationID:{registration.ID}");
+        //注销
+        consulClient.Agent.ServiceDeregister(registration.ID).ConfigureAwait(true);
+        //注册
+        consulClient.Agent.ServiceRegister(registration).ConfigureAwait(true);
+        //应用程序关闭时候
+        lifetime.ApplicationStopping.Register(() =>
+        {
+            //正在注销
+            logger.LogInformation("Unregistering from Consul");
+            consulClient.Agent.ServiceDeregister(registration.ID).ConfigureAwait(true);
+        });
+        //每个服务都需要提供一个用于健康检查的接口，该接口不具备业务功能。服务注册时把这个接口的地址也告诉注册中心，注册中心会定时调用这个接口来检测服务是否正常，如果不正常，则将它移除，这样就保证了服务的可用性。
+        app.Map("/HealthCheck", s =>
+        {
+            s.Run(async context =>
+            {
+                await context.Response.WriteAsync("ok");
+            });
+        });
+        return app;
+    }
+}
+```
+
+### 3. APIService
+
+项目添加一个Get方法，对应APIGateway项目的路由上下游配置，具体代码如下：
+
+```perl
+[Route("api/[controller]")]
+[ApiController]
+public class ValuesController : ControllerBase
+{
+    // GET api/values
+    [HttpGet]
+    public ActionResult<IEnumerable<string>> Get()
+    {
+        var port = Request.Host.Port;
+        return new string[] { "value1", "value2", port.Value.ToString() };
+    }
+}
+```
+
+appsettings.json配置加入Consul地址：
+
+```json
+"Consul": {
+  "Host": "http://192.168.113.128:8500"
+}
+```
+
+APIService项目的ConfigureServices添加Consul配置：
+
+```c#
+services.AddConsulConfig(Configuration);
+```
+
+在Configure添加Consul服务注册：
+
+```c#
+APIServiceA：app.UseConsul("http://172.168.18.73", "9999");
+APIServiceB：app.UseConsul("http://172.168.18.73", "9998");
+```
+
+
+
